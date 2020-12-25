@@ -1,0 +1,110 @@
+{
+    "states": {
+        "top10cases": {
+            "x": [
+                "California",
+                "Texas",
+                "Florida",
+                "Illinois",
+                "New York",
+                "Ohio",
+                "Georgia",
+                "Pennsylvania",
+                "Tennessee",
+                "Michigan"
+            ],
+            "y": [
+                2032240,
+                1661007,
+                1247538,
+                926967,
+                896242,
+                653650,
+                597753,
+                596122,
+                532375,
+                508029
+            ]
+        },
+        "top10deaths": {
+            "x": [
+                "Northern Mariana Islands",
+                "Virgin Islands",
+                "Vermont",
+                "Guam",
+                "Alaska",
+                "Hawaii",
+                "Maine",
+                "Wyoming",
+                "New Hampshire",
+                "District of Columbia"
+            ],
+            "y": [
+                2,
+                23,
+                120,
+                122,
+                191,
+                283,
+                317,
+                373,
+                690,
+                756
+            ]
+        }
+    },
+    "counties": {
+        "top10cases": {
+            "x": [
+                "Los Angeles",
+                "New York City",
+                "Cook",
+                "Maricopa",
+                "Miami-Dade",
+                "Harris",
+                "Dallas",
+                "San Bernardino",
+                "Clark",
+                "Riverside"
+            ],
+            "y": [
+                664193,
+                401251,
+                380096,
+                298299,
+                283284,
+                225102,
+                179418,
+                174091,
+                160569,
+                158110
+            ]
+        },
+        "top10deaths": {
+            "x": [
+                "Hayes",
+                "Slope",
+                "Trimble",
+                "Tinian",
+                "Powell",
+                "Morgan",
+                "Ellis",
+                "Harmon",
+                "Unknown",
+                "Wrangell City and Borough"
+            ],
+            "y": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    }
+}
