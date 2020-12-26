@@ -3,10 +3,7 @@
 # @Author: MijazzChan
 # @Date: 2020-12-25, 2:47 PM
 import csv
-import json
-import os
 import re
-import sys
 
 import UTILS
 import pandas as pd
@@ -128,13 +125,13 @@ def topDataPersistence():
         'lastUpdate': updatedOn
     }
 
-    UTILS.toJsonFile(topStateData, './generatedjson/tops/', 'states.json')
-    UTILS.toJsonFile(topCountyData, './generatedjson/tops/', 'counties.json')
-    UTILS.toJsonFile(totalData, './generatedjson/', 'overview.json')
+    UTILS.toJsonFile(topStateData, './pages/json/tops/', 'states.json')
+    UTILS.toJsonFile(topCountyData, './pages/json/tops/', 'counties.json')
+    UTILS.toJsonFile(totalData, './pages/json/tops/', 'overview.json')
 
 
 def lineDataPersistence():
-    stateWisePath = './generatedjson/statewise/'
+    stateWisePath = './pages/json/statewise/'
     timeSplit = [7, 30, 180, 365]
     for timeScale in timeSplit:
         fullDataWithinScale = gainDataWithinGivenDays(usFull, timeScale)
@@ -162,7 +159,7 @@ def lineDataPersistence():
 
 
 def mapDataPersistence():
-    mapDataPath = './generatedjson/mapdata/'
+    mapDataPath = './pages/json/mapdata/'
     tmp = [usLiveState, usLiveCounty]
     for idx in range(len(tmp)):
         df = tmp[idx]
