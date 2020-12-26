@@ -27,22 +27,18 @@ def prepareUSData():
     Access global variable to turn each into DataFrame.
     """
     global usFull, usState, usCounty, usLiveState, usLiveCounty
-    dataFrames = (usFull, usState, usCounty, usLiveState, usLiveCounty)
-    usFull = pd.read_csv(UPSTREAM + 'us.csv')
-    usState = pd.read_csv(UPSTREAM + 'us-states.csv')
-    usCounty = pd.read_csv(UPSTREAM + 'us-counties.csv')
-    usLiveState = pd.read_csv(UPSTREAM + 'live/us-states.csv')
-    usLiveCounty = pd.read_csv(UPSTREAM + 'live/us-counties.csv')
+    unusedColumn = ['confirmed_cases','confirmed_deaths','probable_cases','probable_deaths']
+    dataFrames =[usFull, usState, usCounty, usLiveState, usLiveCounty]
+    usFull = pd.read_csv(UPSTREAM + 'us.csv', dtype={'fips': str})
+    usState = pd.read_csv(UPSTREAM + 'us-states.csv', dtype={'fips': str})
+    usCounty = pd.read_csv(UPSTREAM + 'us-counties.csv', dtype={'fips': str})
+    usLiveState = pd.read_csv(UPSTREAM + 'live/us-states.csv', dtype={'fips': str})
+    usLiveCounty = pd.read_csv(UPSTREAM + 'live/us-counties.csv', dtype={'fips': str})
     usCounty = usCounty[usCounty['fips'].notna()]
     usLiveCounty = usLiveCounty[usLiveCounty['fips'].notna()]
-    for df in dataFrames:
-        df.fillna(value=0, inplace=True)
-    for df in (usState, usLiveState, usCounty, usLiveCounty):
-        df['fips'] = df['fips'].astype(str)
     for df in (usFull, usState, usCounty):
         df['dateIndex'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
         df.set_index(pd.DatetimeIndex(df['dateIndex']), inplace=True)
-
 
 
 def gainDataWithinGivenDays(df: pd.DataFrame, delta: int = 30) -> pd.DataFrame:
@@ -63,11 +59,11 @@ def getCasesOrDeathsSeries(df: pd.DataFrame, identifiedCol: str, casesOrDeaths: 
     if casesOrDeaths == 'both':
         seriesY = {'cases': [], 'deaths': []}
         for identifier in identifiers:
-            seriesY['cases'].append(df[df[identifiedCol] == identifier]['cases'].tolist())
-            seriesY['deaths'].append(df[df[identifiedCol] == identifier]['deaths'].tolist())
+            seriesY['cases'].append(df[df[identifiedCol] == identifier]['cases'].fillna(0).astype(int).tolist())
+            seriesY['deaths'].append(df[df[identifiedCol] == identifier]['deaths'].fillna(0).astype(int).tolist())
     else:
         for identifier in identifiers:
-            seriesY.append(df[df[identifiedCol] == identifier][casesOrDeaths].tolist())
+            seriesY.append(df[df[identifiedCol] == identifier][casesOrDeaths].fillna(0).tolist())
 
     return seriesX, seriesY
 
@@ -76,7 +72,6 @@ def topDataPersistence():
     usTotalCases = 0
     usTotalDeaths = 0
     updatedOn = ''
-
 
     # Full US Persistence
     with open(UPSTREAM + 'live/us.csv', 'r') as f:
@@ -175,7 +170,6 @@ def mapDataPersistence():
         if len(fipsX) != len(seriesY['cases']) or len(fipsX) != len(seriesY['deaths']):
             raise Exception('Index Must Match')
         tmpData = []
-        print(fipsX)
         for i in range(len(fipsX)):
             tmpEntry = {}
             tmpEntry['fipsCode'] = fipsX[i]

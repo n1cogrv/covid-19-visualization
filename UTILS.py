@@ -5,7 +5,57 @@
 
 import json
 import os
+import pandas as pd
 import numpy as np
+
+selector = {'liveus': {
+    'date': str,
+    'cases': pd.Int64Dtype(),
+    'deaths': pd.Int64Dtype(),
+    'confirmed_cases': pd.Int64Dtype(),
+    'confirmed_deaths': pd.Int64Dtype(),
+    'probable_cases': pd.Int64Dtype(),
+    'probable_deaths': pd.Int64Dtype()
+}, 'liveusstate': {
+    'state': str,
+    'fips': str,
+    'date': str,
+    'cases': pd.Int64Dtype(),
+    'deaths': pd.Int64Dtype(),
+    'confirmed_cases': pd.Int64Dtype(),
+    'confirmed_deaths': pd.Int64Dtype(),
+    'probable_cases': pd.Int64Dtype(),
+    'probable_deaths': pd.Int64Dtype()
+}, 'liveuscounty': {
+    'state': str,
+    'fips': str,
+    'date': str,
+    'county': str,
+    'cases': pd.Int64Dtype(),
+    'deaths': pd.Int64Dtype(),
+    'confirmed_cases': pd.Int64Dtype(),
+    'confirmed_deaths': pd.Int64Dtype(),
+    'probable_cases': pd.Int64Dtype(),
+    'probable_deaths': pd.Int64Dtype()
+}, 'us': {
+    'date': str,
+    'cases': pd.Int64Dtype(),
+    'deaths': pd.Int64Dtype()
+}, 'usstate': {
+    'date': str,
+    'cases': pd.Int64Dtype(),
+    'deaths': pd.Int64Dtype(),
+    'state': str,
+    'fips': str
+}, 'uscounty': {
+    'date': str,
+    'cases': pd.Int64Dtype(),
+    'deaths': pd.Int64Dtype(),
+    'state': str,
+    'fips': str,
+    'county': str
+}
+}
 
 
 def toJsonFile(dataObj, filePath: str, fileName: str):
@@ -20,3 +70,8 @@ def datetime64ToStr(dateSeries: list, unit: str = 'D') -> list:
         dateSeries[i] = np.datetime_as_string(dateSeries[i], unit=unit)
     dateSeries.sort()
     return dateSeries
+
+
+def dtypeDictOnRead(typeOfDataFrame: str) -> dict:
+    global selector
+    return selector[typeOfDataFrame]
