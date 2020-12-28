@@ -1,0 +1,17 @@
+{
+    "countyX": [
+        "Kent",
+        "New Castle",
+        "Sussex"
+    ],
+    "casesY": [
+        8771,
+        31697,
+        14458
+    ],
+    "deathsY": [
+        158,
+        448,
+        291
+    ]
+}

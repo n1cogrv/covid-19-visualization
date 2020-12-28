@@ -53,6 +53,10 @@ li.dark-mode-nav {
     padding: 0.5rem;
 }
 
+a.state-selection {
+    width: 33%;
+}
+
 .highcharts-figure, .highcharts-data-table table {
     min-width: 310px;
     max-width: 100%;

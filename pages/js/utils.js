@@ -26,6 +26,18 @@ function buildListingRow(idx, col1, col2) {
     return "<tr><th scope='row'>"+ idx.toString() +"</th><td>" + addComma(col1) +"</td><td>" + addComma(col2) + "</td></tr>"
 }
 
+function buildStateWiseListingRow(idx, countyName ,col1, col2) {
+    return "<tr><th scope='row'>" + idx.toString() + "</th><td>" + countyName + "</td><td>" + addComma(col1) + "</td><td>" + addComma(col2) + "</td></tr>";
+}
+
+function buildStateAHrefEntry(fips, stateName) {
+    return "<a class='list-group-item list-group-item-action state-selection' href='?state=" + stateName + "'>" + fips + " - " + stateName + "</a>";
+}
+
+function getChangeBtn() {
+    return "<button class='btn btn-sm btn-primary' onclick='checkParamAndPrompt(true)'>Change</button>"
+}
+
 function getHighChartTheme() {
     let lightTheme =   {
         colors: "#f45b5b #8085e9 #8d4654 #7798BF #aaeeee #ff0066 #eeaaee #55BF3B #DF5353 #7798BF #aaeeee".split(

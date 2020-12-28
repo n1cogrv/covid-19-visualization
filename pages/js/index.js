@@ -1,5 +1,4 @@
 
-
 async function getOverviewData() {
     let casesCurrent;
     let deathsCurrent;

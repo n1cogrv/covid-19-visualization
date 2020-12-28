@@ -34,6 +34,12 @@
 [data-theme="dark"] .list-group {
 	color: #ffffff !important;
 }
+
+[data-theme="dark"] a.state-selection{
+    background-color: #2b2727;
+    color: #f8f8f8;
+}
+
 [data-theme="dark"] a.list-group-item:hover, a.list-group-item:focus {
 	background-color: rgba(255, 255, 255, 0.3) !important;
 	color: #ffffff;

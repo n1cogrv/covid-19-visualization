@@ -152,6 +152,19 @@ def topDataPersistence():
     UTILS.toJsonFile(totalData, './pages/json/', 'current.json')
 
 
+def countyGroupByStatePersistence():
+    stateWisePath = './pages/json/statewise/'
+    statesUnique = usLiveCounty['state'].unique()
+    tmpData = {}
+    for state in statesUnique:
+        tmpFrame = usLiveCounty[usLiveCounty['state'] == state].fillna(value=0)
+        tmpData['countyX'] = tmpFrame['county'].tolist()
+        tmpData['casesY'] = tmpFrame['cases'].astype(int).tolist()
+        tmpData['deathsY'] = tmpFrame['deaths'].astype(int).tolist()
+        statefips = str(tmpFrame['fips'].iloc[0])[:2]
+        UTILS.toJsonFile(tmpData, '{}{}/'.format(stateWisePath, statefips), 'counties-under.json')
+
+
 def lineDataPersistence():
     stateWisePath = './pages/json/statewise/'
     overviewPath = './pages/json/overview/'
@@ -204,7 +217,8 @@ def mapDataPersistence():
 
 if __name__ == '__main__':
     prepareUSData()
-    # df = gainDataWithinGivenDays(usState, 30)
+    # # df = gainDataWithinGivenDays(usState, 30)
     topDataPersistence()
     lineDataPersistence()
     mapDataPersistence()
+    countyGroupByStatePersistence()
