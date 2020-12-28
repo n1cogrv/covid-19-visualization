@@ -27,8 +27,8 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Covid-19 US Visualization</div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action bg-light" href="#">Overview</a>
-            <!--        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>-->
+            <a class="list-group-item list-group-item-action bg-light" href="index.html">Overview</a>
+            <a class="list-group-item list-group-item-action bg-light" href="listing.html">Listing</a>
             <!--        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>-->
             <!--        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>-->
             <!--        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>-->
@@ -81,9 +81,9 @@
             <div class="row">
                 <div class="col-12 grid-margin">
                     <div class="card bg-light">
-                      <div class="card-header text-center">
-                        <h4>Real-Time Data</h4>
-                      </div>
+                        <div class="card-header text-center">
+                            <h4>Real-Time Data</h4>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-3 col-md-6">
@@ -136,29 +136,29 @@
                 </div>
             </div>
 
-          <div class="spacer" style="padding: 1rem"></div>
+            <div class="spacer" style="padding: 1rem"></div>
 
-<!--          <p class="h2 text-center" style="padding: 1rem">Timeline Chart</p>-->
-          <div class="row">
+            <!--          <p class="h2 text-center" style="padding: 1rem">Timeline Chart</p>-->
+            <div class="row">
                 <div class="col-12 grid-margin">
                     <div class="card bg-light">
 
-                      <div class="card-header text-center">
-                        <h4>Timeline Chart</h4>
-                      </div>
+                        <div class="card-header text-center">
+                            <h4>Timeline Chart</h4>
+                        </div>
 
                         <div class="card-body">
                             <figure class="highcharts-figure">
-                                <div id="container1" class="HIGHCHARTS-CONTAINER" style="height: 600px">
+                                <div class="HIGHCHARTS-CONTAINER" id="container1" style="height: 600px">
 
                                 </div>
                             </figure>
                         </div>
                         <div class="card-footer d-flex justify-content-end">
                             <span style="padding: 0.5rem">Choose View -></span>
-                          <button class="btn bg-transparent" id="time-scale-7">Week</button>
-                          <button class="btn bg-transparent" id="time-scale-30">Month</button>
-                          <button class="btn bg-transparent" id="time-scale-365">Year</button>
+                            <button class="btn bg-transparent" id="time-scale-7">Week</button>
+                            <button class="btn bg-transparent" id="time-scale-30">Month</button>
+                            <button class="btn bg-transparent" id="time-scale-365">Year</button>
                         </div>
                     </div>
 
@@ -183,11 +183,21 @@
     <script crossorigin="anonymous"
             integrity="sha256-CK2SN9r2AeJiBIg6AD+ntOEX8Q7d9Q8NfetZzjnjcag="
             src="https://cdn.jsdelivr.net/npm/dark-mode-switch@1.0.0/dark-mode-switch.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/highcharts.js" integrity="sha256-fDbe4TepPjh6W630mXP0hzXCDbeBKCaL7xMiH1vi6r4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/map.js" integrity="sha256-MhuSaR+PCWyAoQoao/I4VC28Jn44ClJgTkMX2JFf6Tk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/exporting.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/export-data.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/accessibility.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-fDbe4TepPjh6W630mXP0hzXCDbeBKCaL7xMiH1vi6r4="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/highcharts.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-MhuSaR+PCWyAoQoao/I4VC28Jn44ClJgTkMX2JFf6Tk="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/map.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-u8OFdTPqM2KiJslTVJjXXIFf2v9ZWoWhMpNdusY4XgM="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/exporting.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-JWDOjoCSCb+brqc8AmgrD84td506g7CPIJT8tai7HCA="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/export-data.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-DtslBZEW0z3+1tIdiNdtoW2oKJigMleQb8rfvT6eca8="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/accessibility.js"></script>
     <script src="js/index.js"></script>
     <script src="js/utils.js"></script>
     <!-- Menu Toggle Script -->

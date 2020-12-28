@@ -89,13 +89,13 @@ def topDataPersistence():
     usTopStateDeathsY = deathsDFTmp['deaths'].tolist()
 
     # Top County
-    casesDFTmp = usLiveCounty[['county', 'cases']].sort_values('cases', ascending=False)
+    casesDFTmp = usLiveCounty[['county', 'state', 'cases']].sort_values('cases', ascending=False)
     casesDFTmp.fillna(value=0, inplace=True)
-    usTopCountyCasesX = casesDFTmp['county'].tolist()
+    usTopCountyCasesX = casesDFTmp[['county', 'state']].agg(' - '.join, axis=1).tolist()
     usTopCountyCasesY = casesDFTmp['cases'].tolist()
-    deathsDFTmp = usLiveCounty[['county', 'deaths']].sort_values('deaths', ascending=False)
+    deathsDFTmp = usLiveCounty[['county', 'state', 'deaths']].sort_values('deaths', ascending=False)
     deathsDFTmp.fillna(value=0, inplace=True)
-    usTopCountyDeathsX = deathsDFTmp['county'].tolist()
+    usTopCountyDeathsX = deathsDFTmp[['county', 'state']].agg(' - '.join, axis=1).tolist()
     usTopCountyDeathsY = deathsDFTmp['deaths'].tolist()
 
     topStateData = {
@@ -147,7 +147,7 @@ def topDataPersistence():
 
     UTILS.toJsonFile(topStateData, './pages/json/tops/', 'states.json')
     UTILS.toJsonFile(topCountyData, './pages/json/tops/', 'counties.json')
-    UTILS.toJsonFile(top10StateData, './pages/json/tops/', 'state10.json')
+    UTILS.toJsonFile(top10StateData, './pages/json/tops/', 'states10.json')
     UTILS.toJsonFile(top10CountyData, './pages/json/tops/', 'counties10.json')
     UTILS.toJsonFile(totalData, './pages/json/', 'current.json')
 
@@ -155,7 +155,7 @@ def topDataPersistence():
 def lineDataPersistence():
     stateWisePath = './pages/json/statewise/'
     overviewPath = './pages/json/overview/'
-    timeSplit = [7, 30, 180, 365]
+    timeSplit = [7, 30, 365]
     for timeScale in timeSplit:
         fullDataWithinScale = gainDataWithinGivenDays(usFull, timeScale)
         dateSeries = list(np.array(fullDataWithinScale.index.unique()))

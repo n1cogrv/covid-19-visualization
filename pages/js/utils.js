@@ -1,6 +1,10 @@
 const upArrorElement = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"#00ff00\" class=\"bi bi-triangle-fill\" viewBox=\"0 0 20 20\"><path fill-rule=\"evenodd\" d=\"M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z\"/></svg>";
 const downArrorElement = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"#ff0000\" class=\"bi bi-triangle-fill\" viewBox=\"0 0 20 20\" ><path fill-rule=\"evenodd\" d=\"M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z\" transform='rotate(180)'/></svg>";
-
+const JSON_URL = "json/";
+const JSON_OVERVIEW_URL = "json/overview/";
+const JSON_STATEWISE_URL = "json/statewise/";
+const JSON_MAPDATA_URL = "json/mapdata/";
+const JSON_TOPS_URL = "json/tops/";
 function awaitToGetJson(url) {
     return new Promise(((resolve, reject) => {
         $.getJSON(url, dataReceived => {
@@ -16,6 +20,10 @@ function addComma(number) {
 
 function getUpOrDownArror(upOrDown) {
     return upOrDown <= 0 ? downArrorElement : upArrorElement;
+}
+
+function buildListingRow(idx, col1, col2) {
+    return "<tr><th scope='row'>"+ idx.toString() +"</th><td>" + addComma(col1) +"</td><td>" + addComma(col2) + "</td></tr>"
 }
 
 function getHighChartTheme() {
@@ -164,7 +172,7 @@ function getHighChartTheme() {
 
 }
 
-function parseSplineChart(containerId, dateSeriesX, casesSeriesY, deathsSeriesY) {
+function parseLineChart(containerId, graphTitle, dateSeriesX, casesSeriesY, deathsSeriesY) {
     Highcharts.setOptions(getHighChartTheme());
     Highcharts.chart('container1', {
     chart: {
@@ -172,12 +180,12 @@ function parseSplineChart(containerId, dateSeriesX, casesSeriesY, deathsSeriesY)
             scrollPositionX: 1
         },
     }, title: {
-        text: 'COVID-19 CASES&DEATHS OVERVIEW GRAPH',
-        align: 'left'
+        text: graphTitle,
+        align: 'center'
     },
     subtitle: {
-        text: 'START FROM '+dateSeriesX[0]+', TO '+dateSeriesX[dateSeriesX.length - 1]+'.',
-        align: 'left'
+        text: 'FROM '+dateSeriesX[0]+' TO '+dateSeriesX[dateSeriesX.length - 1]+'.',
+        align: 'center'
     },
     xAxis: {
         type: 'datetime',

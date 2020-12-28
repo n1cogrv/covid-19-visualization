@@ -1,7 +1,4 @@
-const JSON_URL = "json/";
-const JSON_OVERVIEW_URL = "json/overview/";
-const JSON_STATEWISE_URL = "json/statewise/";
-const JSON_MAPDATA_URL = "json/mapdata/";
+
 
 async function getOverviewData() {
     let casesCurrent;
@@ -44,5 +41,5 @@ async function getOverviewData() {
 async function parseOverviewLineChart(containerId, timeScale) {
     let dataForChart;
     dataForChart = await awaitToGetJson(JSON_OVERVIEW_URL + timeScale + ".json");
-    parseSplineChart(containerId, dataForChart["dayX"], dataForChart["casesY"], dataForChart["deathsY"]);
+    parseLineChart(containerId, "COVID-19 CASES & DEATHS OVERVIEW GRAPH" ,dataForChart["dayX"], dataForChart["casesY"], dataForChart["deathsY"]);
 }

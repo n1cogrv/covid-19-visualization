@@ -49,6 +49,10 @@ li.dark-mode-nav {
   }
 }
 
+.listing-card {
+    padding: 0.5rem;
+}
+
 .highcharts-figure, .highcharts-data-table table {
     min-width: 310px;
     max-width: 100%;
