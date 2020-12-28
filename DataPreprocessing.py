@@ -108,6 +108,16 @@ def topDataPersistence():
             'y': usTopStateDeathsY
         }
     }
+    top10StateData = {
+        'topcases': {
+            'x': usTopStateCasesX[:10],
+            'y': usTopStateCasesY[:10]
+        },
+        'topdeaths': {
+            'x': usTopStateDeathsX[:10],
+            'y': usTopStateDeathsY[:10]
+        }
+    }
     topCountyData = {
         'topcases': {
             'x': usTopCountyCasesX,
@@ -116,6 +126,16 @@ def topDataPersistence():
         'topdeaths': {
             'x': usTopCountyDeathsX,
             'y': usTopCountyDeathsY
+        }
+    }
+    top10CountyData = {
+        'topcases': {
+            'x': usTopCountyCasesX[:10],
+            'y': usTopCountyCasesY[:10]
+        },
+        'topdeaths': {
+            'x': usTopCountyDeathsX[:10],
+            'y': usTopCountyDeathsY[:10]
         }
     }
 
@@ -127,11 +147,14 @@ def topDataPersistence():
 
     UTILS.toJsonFile(topStateData, './pages/json/tops/', 'states.json')
     UTILS.toJsonFile(topCountyData, './pages/json/tops/', 'counties.json')
-    UTILS.toJsonFile(totalData, './pages/json/tops/', 'overview.json')
+    UTILS.toJsonFile(top10StateData, './pages/json/tops/', 'state10.json')
+    UTILS.toJsonFile(top10CountyData, './pages/json/tops/', 'counties10.json')
+    UTILS.toJsonFile(totalData, './pages/json/', 'current.json')
 
 
 def lineDataPersistence():
     stateWisePath = './pages/json/statewise/'
+    overviewPath = './pages/json/overview/'
     timeSplit = [7, 30, 180, 365]
     for timeScale in timeSplit:
         fullDataWithinScale = gainDataWithinGivenDays(usFull, timeScale)
@@ -141,7 +164,7 @@ def lineDataPersistence():
         tmpData['dayX'] = dateSeries
         tmpData['casesY'] = fullDataWithinScale['cases'].tolist()
         tmpData['deathsY'] = fullDataWithinScale['deaths'].tolist()
-        UTILS.toJsonFile(tmpData, '{}{}/'.format(stateWisePath, 'overall'), '{}.json'.format(timeScale))
+        UTILS.toJsonFile(tmpData, overviewPath, '{}.json'.format(timeScale))
 
     for timeScale in timeSplit:
         stateDataWithinScale = gainDataWithinGivenDays(usState, timeScale)

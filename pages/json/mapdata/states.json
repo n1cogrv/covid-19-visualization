@@ -1,33 +1,33 @@
 [
     {
         "fipsCode": "01",
-        "casesY": 342426,
-        "deathsY": 4680
+        "casesY": 345628,
+        "deathsY": 4691
     },
     {
         "fipsCode": "02",
-        "casesY": 44876,
-        "deathsY": 191
+        "casesY": 45547,
+        "deathsY": 192
     },
     {
         "fipsCode": "04",
-        "casesY": 486993,
-        "deathsY": 8409
+        "casesY": 494489,
+        "deathsY": 8427
     },
     {
         "fipsCode": "05",
-        "casesY": 213267,
-        "deathsY": 3438
+        "casesY": 214877,
+        "deathsY": 3482
     },
     {
         "fipsCode": "06",
-        "casesY": 2064511,
-        "deathsY": 23964
+        "casesY": 2166955,
+        "deathsY": 24283
     },
     {
         "fipsCode": "08",
-        "casesY": 323329,
-        "deathsY": 4631
+        "casesY": 326276,
+        "deathsY": 4660
     },
     {
         "fipsCode": "09",
@@ -36,178 +36,178 @@
     },
     {
         "fipsCode": "10",
-        "casesY": 53653,
-        "deathsY": 891
+        "casesY": 55057,
+        "deathsY": 897
     },
     {
         "fipsCode": "11",
-        "casesY": 27436,
-        "deathsY": 756
+        "casesY": 28202,
+        "deathsY": 768
     },
     {
         "fipsCode": "12",
-        "casesY": 1247538,
-        "deathsY": 20994
+        "casesY": 1271971,
+        "deathsY": 21211
     },
     {
         "fipsCode": "13",
-        "casesY": 603246,
-        "deathsY": 10303
+        "casesY": 610574,
+        "deathsY": 10356
     },
     {
         "fipsCode": "66",
-        "casesY": 8237,
+        "casesY": 8239,
         "deathsY": 122
     },
     {
         "fipsCode": "15",
-        "casesY": 20861,
+        "casesY": 21064,
         "deathsY": 283
     },
     {
         "fipsCode": "16",
-        "casesY": 135383,
-        "deathsY": 1353
+        "casesY": 136281,
+        "deathsY": 1357
     },
     {
         "fipsCode": "17",
-        "casesY": 932427,
-        "deathsY": 17155
+        "casesY": 939671,
+        "deathsY": 17336
     },
     {
         "fipsCode": "18",
-        "casesY": 491125,
-        "deathsY": 7770
+        "casesY": 496795,
+        "deathsY": 7843
     },
     {
         "fipsCode": "19",
-        "casesY": 274266,
-        "deathsY": 3744
+        "casesY": 275299,
+        "deathsY": 3745
     },
     {
         "fipsCode": "20",
-        "casesY": 213076,
+        "casesY": 213173,
         "deathsY": 2507
     },
     {
         "fipsCode": "21",
-        "casesY": 253824,
-        "deathsY": 2782
+        "casesY": 258820,
+        "deathsY": 2845
     },
     {
         "fipsCode": "22",
-        "casesY": 296499,
-        "deathsY": 7272
+        "casesY": 299722,
+        "deathsY": 7291
     },
     {
         "fipsCode": "23",
-        "casesY": 21547,
-        "deathsY": 319
+        "casesY": 21880,
+        "deathsY": 323
     },
     {
         "fipsCode": "24",
-        "casesY": 263326,
-        "deathsY": 5659
+        "casesY": 267455,
+        "deathsY": 5712
     },
     {
         "fipsCode": "25",
-        "casesY": 341925,
-        "deathsY": 11963
+        "casesY": 352736,
+        "deathsY": 12110
     },
     {
         "fipsCode": "26",
-        "casesY": 508171,
-        "deathsY": 12406
+        "casesY": 515576,
+        "deathsY": 12680
     },
     {
         "fipsCode": "27",
-        "casesY": 404462,
-        "deathsY": 5109
+        "casesY": 409120,
+        "deathsY": 5206
     },
     {
         "fipsCode": "28",
-        "casesY": 204178,
-        "deathsY": 4562
+        "casesY": 206388,
+        "deathsY": 4606
     },
     {
         "fipsCode": "29",
-        "casesY": 400714,
-        "deathsY": 5633
+        "casesY": 404201,
+        "deathsY": 5656
     },
     {
         "fipsCode": "30",
-        "casesY": 79066,
-        "deathsY": 918
+        "casesY": 79780,
+        "deathsY": 924
     },
     {
         "fipsCode": "31",
-        "casesY": 161265,
-        "deathsY": 1583
+        "casesY": 162202,
+        "deathsY": 1584
     },
     {
         "fipsCode": "32",
-        "casesY": 214077,
-        "deathsY": 2943
+        "casesY": 217653,
+        "deathsY": 2965
     },
     {
         "fipsCode": "33",
-        "casesY": 38902,
-        "deathsY": 690
+        "casesY": 40809,
+        "deathsY": 708
     },
     {
         "fipsCode": "34",
-        "casesY": 456847,
-        "deathsY": 18595
+        "casesY": 463166,
+        "deathsY": 18630
     },
     {
         "fipsCode": "35",
-        "casesY": 136622,
-        "deathsY": 2309
+        "casesY": 137968,
+        "deathsY": 2348
     },
     {
         "fipsCode": "36",
-        "casesY": 909123,
-        "deathsY": 36739
+        "casesY": 928376,
+        "deathsY": 37000
     },
     {
         "fipsCode": "37",
-        "casesY": 498005,
-        "deathsY": 6420
+        "casesY": 517449,
+        "deathsY": 6592
     },
     {
         "fipsCode": "38",
-        "casesY": 91229,
-        "deathsY": 1271
+        "casesY": 91472,
+        "deathsY": 1273
     },
     {
         "fipsCode": "69",
-        "casesY": 118,
+        "casesY": 122,
         "deathsY": 2
     },
     {
         "fipsCode": "39",
-        "casesY": 653650,
-        "deathsY": 8456
+        "casesY": 670525,
+        "deathsY": 8509
     },
     {
         "fipsCode": "40",
-        "casesY": 272553,
-        "deathsY": 2328
+        "casesY": 279139,
+        "deathsY": 2370
     },
     {
         "fipsCode": "41",
-        "casesY": 107833,
-        "deathsY": 1431
+        "casesY": 109734,
+        "deathsY": 1436
     },
     {
         "fipsCode": "42",
-        "casesY": 602605,
-        "deathsY": 14892
+        "casesY": 614303,
+        "deathsY": 15040
     },
     {
         "fipsCode": "72",
-        "casesY": 105039,
-        "deathsY": 1432
+        "casesY": 106842,
+        "deathsY": 1445
     },
     {
         "fipsCode": "44",
@@ -216,38 +216,38 @@
     },
     {
         "fipsCode": "45",
-        "casesY": 285028,
-        "deathsY": 5043
+        "casesY": 296179,
+        "deathsY": 5155
     },
     {
         "fipsCode": "46",
-        "casesY": 96546,
-        "deathsY": 1430
+        "casesY": 97390,
+        "deathsY": 1446
     },
     {
         "fipsCode": "47",
-        "casesY": 532375,
-        "deathsY": 6367
+        "casesY": 549299,
+        "deathsY": 6451
     },
     {
         "fipsCode": "48",
-        "casesY": 1663094,
-        "deathsY": 27042
+        "casesY": 1691515,
+        "deathsY": 27110
     },
     {
         "fipsCode": "49",
-        "casesY": 260589,
-        "deathsY": 1205
+        "casesY": 264874,
+        "deathsY": 1214
     },
     {
         "fipsCode": "50",
-        "casesY": 6781,
-        "deathsY": 120
+        "casesY": 7029,
+        "deathsY": 127
     },
     {
         "fipsCode": "51",
-        "casesY": 327993,
-        "deathsY": 4820
+        "casesY": 333576,
+        "deathsY": 4854
     },
     {
         "fipsCode": "78",
@@ -256,22 +256,22 @@
     },
     {
         "fipsCode": "53",
-        "casesY": 237689,
-        "deathsY": 3268
+        "casesY": 241036,
+        "deathsY": 3283
     },
     {
         "fipsCode": "54",
-        "casesY": 78836,
-        "deathsY": 1247
+        "casesY": 80710,
+        "deathsY": 1254
     },
     {
         "fipsCode": "55",
-        "casesY": 505345,
-        "deathsY": 5028
+        "casesY": 508580,
+        "deathsY": 5042
     },
     {
         "fipsCode": "56",
-        "casesY": 42664,
+        "casesY": 43200,
         "deathsY": 373
     }
 ]
