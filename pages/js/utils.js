@@ -55,11 +55,13 @@ function getHighChartTheme() {
         labels: { style: { color: "#6e6e70", fontSize: "18px" } },
         legend: {
           itemStyle: { fontWeight: "bold", fontSize: "18px" },
+          backgroundColor: "rgba(255, 255, 255, 0.5)"
         },
         xAxis: { labels: { style: { color: "#6e6e70" } } },
         yAxis: { labels: { style: { color: "#6e6e70" } } },
         plotOptions: {
-          series: { shadow: !0 },
+          series: { dataLabels: { color: "#F0F0F3", style: { fontSize: "15px" } },
+                    },
           candlestick: { lineColor: "#404048" },
           map: { shadow: !1 },
         },
@@ -112,7 +114,7 @@ function getHighChartTheme() {
         },
         plotOptions: {
           series: {
-            dataLabels: { color: "#F0F0F3", style: { fontSize: "14px" } },
+            dataLabels: { color: "#F0F0F3", style: { fontSize: "15px" } },
             marker: { lineColor: "#333" },
           },
           boxplot: { fillColor: "#505053" },
@@ -127,7 +129,7 @@ function getHighChartTheme() {
           title: { style: { color: "#C0C0C0" } },
         },
         credits: { style: { color: "#666" } },
-        labels: { style: { color: "#707073", fontSize: "16px" } },
+        labels: { style: { color: "#707073", fontSize: "18px" } },
         drilldown: {
           activeAxisLabelStyle: { color: "#F0F0F3" },
           activeDataLabelStyle: { color: "#F0F0F3" },
@@ -222,12 +224,14 @@ function parseLineChart(containerId, graphTitle, dateSeriesX, casesSeriesY, deat
         data: casesSeriesY,
         name: 'Cases',
         lineWidth: 4,
+        color: '#ffc107',
         yAxis: 0
     }, {
         type: 'line',
         data: deathsSeriesY,
         name: 'Deaths',
         lineWidth: 4,
+        color: '#dc3545',
         yAxis: 1
     }], navigation: {
         menuItemStyle: {
@@ -235,62 +239,61 @@ function parseLineChart(containerId, graphTitle, dateSeriesX, casesSeriesY, deat
         }
     },
 });
-//     Highcharts.chart(containerId, {
-//     chart: {
-//         type: 'spline',
-//         scrollablePlotArea: {
-//             minWidth: 600,
-//             minHeight: 600,
-//             scrollPositionX: 1
-//         },
-//     },
-//     title: {
-//         text: 'COVID-19 CASES&DEATHS OVERVIEW GRAPH',
-//         align: 'left'
-//     },
-//     subtitle: {
-//         text: 'START FROM '+dateSeriesX[0]+', TO '+dateSeriesX[dateSeriesX.length - 1]+'.',
-//         align: 'left'
-//     },
-//     xAxis: {
-//         type: 'datetime',
-//         labels: {
-//             overflow: 'justify'
-//         }
-//     },
-//     tooltip: {
-//         valueSuffix: ''
-//     },
-//     plotOptions: {
-//         spline: {
-//             lineWidth: 4,
-//             states: {
-//                 hover: {
-//                     lineWidth: 6
-//                 }
-//             },
-//             marker: {
-//                 enabled: true
-//             },
-//             pointInterval: 3600000*24, // per day
-//             pointStart: Date.parse(dateSeriesX[0])
-//         }
-//     },
-//     series: [{
-//         name: 'Cases',
-//         x: dateSeriesX,
-//         data: casesSeriesY,
-//
-//     }, {
-//         name: 'Deaths',
-//         selected: false,
-//         x: dateSeriesX,
-//         data: deathsSeriesY
-//     }],
-//     navigation: {
-//         menuItemStyle: {
-//             fontSize: '12px'
-//         }
-//     },
-// });
+
+}
+
+function parseUSMap(containerId, casesOrDeaths, data) {
+    Highcharts.setOptions(getHighChartTheme());
+
+    Highcharts.mapChart(containerId, {
+
+        chart: {
+            map: 'countries/us/us-all',
+            borderWidth: 2
+        },
+
+        title: {
+            text: casesOrDeaths === 'cases' ? 'Reported Cases Heatmap' : 'Reported Deaths Heatmap'
+        },
+
+        legend: {
+            layout: 'horizontal',
+            borderWidth: 0,
+            floating: true,
+            verticalAlign: 'top',
+            y: 25
+        },
+
+        mapNavigation: {
+            enabled: true
+        },
+
+        colorAxis: {
+            type: 'linear',
+            stops: [
+                [0, "#7EAB55"],
+                [0.2, "#FFFE55"],
+                [0.4, "#F5C142"],
+                [0.6, "#DF8244"],
+                [1, "#B02418"]
+            ]
+        },
+
+        series: [{
+            animation: {
+                duration: 1000
+            },
+            data: data,
+            joinBy: ['fips', 'fipsCode'],
+            dataLabels: {
+                enabled: true,
+                color: '#FFFFFF',
+                format: '{point.name}'
+            },
+            name: casesOrDeaths==='cases'? 'Cases': 'Deaths',
+            tooltip: {
+                pointFormat: '{point.name}: {point.value}'
+            }
+        }]
+    });
 }

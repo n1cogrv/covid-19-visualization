@@ -30,7 +30,7 @@
             <a class="list-group-item list-group-item-action bg-light" href="index.html">Overview</a>
             <a class="list-group-item list-group-item-action bg-light" href="listing.html">Listing</a>
             <a class="list-group-item list-group-item-action bg-light" href="state-wise.html">State-wise Data</a>
-            <a class="list-group-item list-group-item-action bg-light" href="state-overview-map.html">State Overview Map</a>
+            <a class="list-group-item list-group-item-action bg-light" href="state-overview-map.html">States Overview Map</a>
             <a class="list-group-item list-group-item-action bg-light" href="about.html">About</a>
             <!--        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>-->
         </div>
@@ -76,121 +76,31 @@
 
         <div class="container-fluid">
             <!-- Content -->
-            <p id="current-header" class="h2 text-center" style="padding-top: 1rem">Covid-19 in Loading...</p>
-            <p class="h6 text-muted text-right" id="date-current">Updated on </p>
-            <div class="row">
-                <div class="col-12 grid-margin">
-                    <div class="card bg-light">
-                        <div class="card-header text-center">
-                            <h4>Real-Time Data</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="d-flex">
-                                        <div class="wrapper">
-                                            <h3 class="mb-0 font-weight-semibold" id="cases-current">Loading</h3>
-                                            <h5 class="mb-0 font-weight-medium text-warning">Cases</h5>
-                                            <p class="mb-0 text-muted">Today</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                                    <div class="d-flex">
-                                        <div class="wrapper">
-                                            <h3 class="mb-0 font-weight-semibold" id="deaths-current">Loading</h3>
-                                            <h5 class="mb-0 font-weight-medium text-danger">Deaths</h5>
-                                            <p class="mb-0 text-muted">Today</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                                    <div class="d-flex">
-                                        <div class="wrapper">
-                                            <h3 class="mb-0 font-weight-semibold" id="cases-compare">
-                                                Loading
-
-                                            </h3>
-
-                                            <h5 class="mb-0 font-weight-medium text-primary">Cases</h5>
-                                            <p class="mb-0 text-muted">To Yesterday</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
-                                    <div class="d-flex">
-                                        <div class="wrapper">
-                                            <h3 class="mb-0 font-weight-semibold" id="deaths-compare">Loading</h3>
-                                            <h5 class="mb-0 font-weight-medium text-primary">Deaths</h5>
-                                            <p class="mb-0 text-muted">To Yesterday</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="spacer" style="padding: 1rem"></div>
-
+            <p id="current-header" class="h2 text-center" style="padding: 1rem">States Overview Map</p>
             <!--          <p class="h2 text-center" style="padding: 1rem">Timeline Chart</p>-->
             <div class="row">
-                <div class="col-12 grid-margin">
-                    <div class="card bg-light">
-
-                        <div class="card-header text-center">
-                            <h4>Timeline Chart</h4>
-                        </div>
-
-                        <div class="card-body">
-                            <figure class="highcharts-figure">
-                                <div class="HIGHCHARTS-CONTAINER" id="container1" style="height: 600px">
+                <div class="col-12 col-xl-6 grid-margin">
+                    <figure class="highcharts-figure">
+                                <div class="HIGHCHARTS-CONTAINER" id="container1" style="height: 600px; width: 100%">
 
                                 </div>
                             </figure>
-                        </div>
-                        <div class="card-footer d-flex justify-content-end">
-                            <span style="padding: 0.5rem">Choose View -></span>
-                            <button class="btn bg-transparent" id="time-scale-7">Week</button>
-                            <button class="btn bg-transparent" id="time-scale-30">Month</button>
-                            <button class="btn bg-transparent" id="time-scale-365">Year</button>
-                        </div>
                     </div>
+
+                <div class="col-xl-6 col-12 grid-margin">
+
+                            <figure class="highcharts-figure">
+                                <div class="HIGHCHARTS-CONTAINER" id="container2" style="height: 600px; width: 100%">
+
+                                </div>
+                            </figure>
 
                 </div>
 
 
                 <!-- Content-->
             </div>
-            <div class="spacer" style="padding: 1rem"></div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h4 class="card-title text-center">Counties</h4>
-                            <table id="state-wise-tb" class="table bg-light table-striped">
-                                <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">County</th>
-                                    <th class="text-warning" scope="col">Cases Reported</th>
-                                    <th class="text-danger" scope="col">Deaths Reported</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
         <!-- /#page-content-wrapper -->
@@ -224,41 +134,23 @@
     <script crossorigin="anonymous"
             integrity="sha256-DtslBZEW0z3+1tIdiNdtoW2oKJigMleQb8rfvT6eca8="
             src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
     <script src="js/utils.js"></script>
-    <script src="js/state-wise.js"></script>
+    <script src="js/state-overview-map.js"></script>
     <!-- Menu Toggle Script -->
     <script>
         document.getElementById("darkSwitch").addEventListener("change", function () {
-            parseStateOverviewChart("container1", 30);
+            parseStateOverviewMap();
         });
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
-        $("#time-scale-7").click(function (e) {
-            e.preventDefault();
-            parseStateOverviewChart("container1", 7);
-        });
-        $("#time-scale-30").click(function (e) {
-            e.preventDefault();
-            parseStateOverviewChart("container1", 30);
-        });
-        $("#time-scale-365").click(function (e) {
-            e.preventDefault();
-            parseStateOverviewChart("container1", 365);
-        });
     </script>
     <script>
         $(document).ready(function () {
-            setTimeout(
-                () => {
-                    checkParamAndPrompt();
-                },
-                600
-            )
-            // getOverviewData();
-            // parseOverviewLineChart("container1", 7);
-            // parseOverviewLineChart("container1", 7);
+            parseStateOverviewMap();
         });
     </script>
 

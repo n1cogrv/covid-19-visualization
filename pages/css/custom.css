@@ -92,3 +92,7 @@ a.state-selection {
 .highcharts-data-table tr:hover {
     background: #f1f7ff;
 }
+.about-list {
+    padding-bottom: 1rem;
+
+}

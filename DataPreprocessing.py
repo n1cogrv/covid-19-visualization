@@ -202,18 +202,23 @@ def mapDataPersistence():
         fipsX, seriesY = getCasesOrDeathsSeries(df, 'fips', 'both')
         if len(fipsX) != len(seriesY['cases']) or len(fipsX) != len(seriesY['deaths']):
             raise Exception('Index Must Match')
-        tmpData = []
+        tmpCaseData = []
+        tmpDeathsData = []
         for i in range(len(fipsX)):
-            tmpEntry = {}
-            tmpEntry['fipsCode'] = fipsX[i]
-            tmpEntry['casesY'] = seriesY['cases'][i][0]
-            tmpEntry['deathsY'] = seriesY['deaths'][i][0]
-            tmpData.append(tmpEntry)
+            tmpCaseEntry = {}
+            tmpDeathEntry = {}
+            tmpCaseEntry['fipsCode'] = fipsX[i]
+            tmpDeathEntry['fipsCode'] = fipsX[i]
+            tmpCaseEntry['value'] = seriesY['cases'][i][0]
+            tmpDeathEntry['value'] = seriesY['deaths'][i][0]
+            tmpCaseData.append(tmpCaseEntry)
+            tmpDeathsData.append(tmpDeathEntry)
         if idx == 0:
-            UTILS.toJsonFile(tmpData, mapDataPath, 'states.json')
+            UTILS.toJsonFile(tmpCaseData, mapDataPath, 'states-cases.json')
+            UTILS.toJsonFile(tmpDeathsData, mapDataPath, 'states-deaths.json')
         else:
-            UTILS.toJsonFile(tmpData, mapDataPath, 'counties.json')
-
+            UTILS.toJsonFile(tmpCaseData, mapDataPath, 'counties-cases.json')
+            UTILS.toJsonFile(tmpDeathsData, mapDataPath, 'counties-deaths.json')
 
 if __name__ == '__main__':
     prepareUSData()
