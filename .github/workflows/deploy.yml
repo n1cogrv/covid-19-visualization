@@ -27,7 +27,7 @@ jobs:
             
         - name: Build Pages Json Data
           run: |
-            python ./dataPreprocessing.py
+            python dataPreprocessing.py
             
         - name: Get Current Time
           id: currenttime
