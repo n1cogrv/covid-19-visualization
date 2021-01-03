@@ -32,6 +32,9 @@ jobs:
         - name: Get Current Time
           id: currenttime
           run: echo "::set-output name=now::$(date +'%Y/%m/%d-%H:%M:%S-UTC' --utc)"
+        
+        - name: Add CNAME
+          run: echo "www.wearamask.ml" > pages/CNAME
             
         - name: Deploy to Pages
           uses: s0/git-publish-subdir-action@develop
@@ -39,7 +42,7 @@ jobs:
             REPO: self
             BRANCH: gh-pages
             FOLDER: pages
-            GITHUB_SSH_PRIVATE_KEYTOKEN: ${{ secrets.PAGES_DEPLOY_KEY }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             SQUASH_HISTORY: true
             SKIP_EMPTY_COMMIT: true
             MESSAGE: ${{ steps.currenttime.output.now }}
