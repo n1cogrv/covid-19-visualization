@@ -1,4 +1,3 @@
-
 async function getOverviewData() {
     let casesCurrent;
     let deathsCurrent;
@@ -40,5 +39,5 @@ async function getOverviewData() {
 async function parseOverviewLineChart(containerId, timeScale) {
     let dataForChart;
     dataForChart = await awaitToGetJson(JSON_OVERVIEW_URL + timeScale + ".json");
-    parseLineChart(containerId, "COVID-19 CASES & DEATHS OVERVIEW GRAPH" ,dataForChart["dayX"], dataForChart["casesY"], dataForChart["deathsY"]);
+    parseLineChart(containerId, "COVID-19 CASES & DEATHS OVERVIEW GRAPH", dataForChart["dayX"], dataForChart["casesY"], dataForChart["deathsY"]);
 }

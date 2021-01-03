@@ -19,14 +19,14 @@ async function checkParamAndPrompt(force) {
         await parseStateViewData();
         await parseStateOverviewChart("container1", 30);
         await fillStateWiseCountyTable();
-        return;
-    }else {
+
+    } else {
         let statesList = $("#states-list");
         for (let stateName in stateToFips) {
             statesList.append(buildStateAHrefEntry(stateToFips[stateName], stateName));
         }
         promptState();
-        return;
+
     }
 }
 
@@ -67,7 +67,7 @@ async function fillStateWiseCountyTable() {
     for (let idx = 0; idx < countiesData["countyX"].length; idx++) {
         tmp.append(
             buildStateWiseListingRow(
-                idx+1,
+                idx + 1,
                 countiesData["countyX"][idx],
                 countiesData["casesY"][idx],
                 countiesData["deathsY"][idx]
