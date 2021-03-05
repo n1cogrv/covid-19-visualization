@@ -1,6 +1,6 @@
 # Covid 19 Visualization in US
 
-> Project Link=> [www.wearamask.ml](http://www.wearamask.ml/)
+> Project Link => [www.wearamask.ml](https://www.wearamask.ml/)
 
 ## How this works
 

@@ -100,7 +100,7 @@
         <div class="container-fluid">
             <p class="h2 text-center" style="padding-top: 1rem">About This Project</p>
             <div class="col-12">
-                <ul class="list bg-light">
+                <ul class="list bg-light" style="padding: 0.5rem 2rem; margin-top: 2rem">
                     <li class="about-list">
                         <h4>Github - <a href="https://github.com/MijazzChan/covid-19-visualization">covid-19-visualization</a>
                         </h4>
@@ -124,6 +124,10 @@
                             <a href="https://www.highcharts.com/">Visit HighCharts</a>
                         </h5>
                     </li>
+                    <li>
+                        <h4>SINCE</h4>
+                        <h5>I have been up and running for since <span id="time-span"></span> . Offer me a star <a href="https://github.com/MijazzChan/covid-19-visualization">here</a> if this project is helpful to you.</h5>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -143,6 +147,9 @@
     <script crossorigin="anonymous"
             integrity="sha256-CK2SN9r2AeJiBIg6AD+ntOEX8Q7d9Q8NfetZzjnjcag="
             src="https://cdn.jsdelivr.net/npm/dark-mode-switch@1.0.0/dark-mode-switch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"
+            integrity="sha256-c95CVJWVMOTR2b7FhjeRhPlrSVPaz5zV5eK917/s7vc=" crossorigin="anonymous"></script>
+
 
     <script src="js/utils.js"></script>
     <!-- Menu Toggle Script -->
@@ -154,7 +161,7 @@
     </script>
     <script>
         $(document).ready(function () {
-
+            $("#time-span").html(moment("20210105", "YYYYMMDD").fromNow().toString());
             }
         );
     </script>
