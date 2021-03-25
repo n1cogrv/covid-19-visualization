@@ -31,6 +31,14 @@ jobs:
         
         - name: Add CNAME
           run: echo "www.wearamask.ml" > pages/CNAME
+          
+        - name: Generate Sitemap for search engine
+          id: sitemap
+          uses: cicirello/generate-sitemap@v1.6.2
+          with:
+            base-url-path: https://www.wearamask.ml/
+            path-to-root: pages
+            sitemap-format: xml
             
         - name: Deploy to Pages
           uses: s0/git-publish-subdir-action@develop
