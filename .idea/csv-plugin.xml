@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/pages/js/override-default-darkmode-detection.js">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
