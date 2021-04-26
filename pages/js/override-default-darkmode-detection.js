@@ -1,47 +1,57 @@
-function setColorScheme(scheme) {
-  switch(scheme){
-    case "dark":
-      document.body.setAttribute("data-theme", "dark");
-      localStorage.setItem("darkSwitch", "dark");
-      darkSwitch.checked = true;
-      break;
-    case "light":
-      document.body.removeAttribute("data-theme");
-      localStorage.removeItem("darkSwitch");
-      darkSwitch.checked = false;
-      break;
-    default:
-      document.body.removeAttribute("data-theme");
-      localStorage.removeItem("darkSwitch");
-      darkSwitch.checked = false;
-      break;
-  }
-}
+(function () {
+    var darkSwitch = document.getElementById("darkSwitch");
+    if (darkSwitch) {
+        initTheme();
+        darkSwitch.addEventListener("change", function (event) {
+            resetTheme();
+        });
 
-function getPreferredColorScheme() {
-  if (window.matchMedia) {
-    if(window.matchMedia("(prefers-color-scheme: dark)").matches){
-      return "dark";
-    } else {
-      return "light";
+        function initTheme() {
+            if (localStorage.getItem("darkSwitch") == null && isSystemSetToDarkTheme()) {
+                setDocumentTheme("dark");
+            } else {
+                var darkThemeSelected = (localStorage.getItem("darkSwitch") === "dark");
+                darkSwitch.checked = darkThemeSelected;
+                darkThemeSelected
+                    ? setDocumentTheme("dark")
+                    : setDocumentTheme("light");
+            }
+        }
+
+        function resetTheme() {
+            if (darkSwitch.checked) {
+                setDocumentTheme("dark");
+            } else {
+                setDocumentTheme("light");
+            }
+
+        }
+
+        function setDocumentTheme(theme) {
+            switch (theme) {
+                case "dark":
+                    document.body.setAttribute("data-theme", "dark");
+                    localStorage.setItem("darkSwitch", "dark");
+                    darkSwitch.checked = true;
+                    break;
+                default:
+                    document.body.removeAttribute("data-theme");
+                    localStorage.removeItem("darkSwitch");
+                    darkSwitch.checked = false;
+                    break;
+            }
+        }
+
+        function isSystemSetToDarkTheme() {
+            if (window.matchMedia) {
+                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            return false;
+        }
+
     }
-  }
-  return "light";
-}
-
-function manualOverrideTheme() {
-    setColorScheme(darkSwitch.checked ? "dark" : "light");
-}
-
-var darkSwitch = document.getElementById("darkSwitch");
-
-if(window.matchMedia && darkSwitch){
-    let colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    colorSchemeQuery.addEventListener("change", setColorScheme(getPreferredColorScheme()));
-}
-
-if (darkSwitch) {
-    darkSwitch.addEventListener("change", function (e) {
-        manualOverrideTheme();
-    });
-}
+})();
