@@ -8,5 +8,6 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="dark-mode-switch" level="application" />
     <orderEntry type="library" name="highcharts" level="application" />
+    <orderEntry type="library" name="dark-mode-switch" level="application" />
   </component>
 </module>
