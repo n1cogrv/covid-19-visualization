@@ -35,14 +35,14 @@ jobs:
           run: echo "::set-output name=now::$(date +'%Y/%m/%d-%H:%M:%S-UTC' --utc)"
         
         - name: Add CNAME
-          run: echo "www.wearamask.ml" > pages/CNAME
+          run: echo "wear-a-mask.mijazz.icu" > pages/CNAME
           
           
         - name: Generate Sitemap for search engine
           id: sitemap
           uses: cicirello/generate-sitemap@v1.6.2
           with:
-            base-url-path: https://www.wearamask.ml/
+            base-url-path: https://wear-a-mask.mijazz.icu/
             path-to-root: pages
             sitemap-format: xml
             
