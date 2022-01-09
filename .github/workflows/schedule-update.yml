@@ -23,7 +23,8 @@ jobs:
             
         - name: Submodule Init for Data
           run: |
-            git submodule update --init --remote --depth 1
+            git submodule update --init --remote --recursive
+            #git submodule update --init --remote --depth 1
             
         - name: Build Pages Json Data
           run: |
