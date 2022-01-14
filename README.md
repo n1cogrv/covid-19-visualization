@@ -1,6 +1,6 @@
 # Covid 19 Visualization in US
 
-> Project Link => [www.wearamask.ml](https://www.wearamask.ml/)
+> Project Link => [wear-a-mask.mijazz.icu](https://wear-a-mask.mijazz.icu)
 
 ## How this works
 
@@ -13,6 +13,38 @@
 ## Github Actions - Automation
 
 + Action will be set as a automation build every morning.
+
+## Version History
+
+### v1.0
+
++ Initial Release of Covid-19-Visualization.
+
++ `Github Actions` is introduced to automatically and periodically build the site.
+
+### v1.1
+
++ `moment.js` is introduced in `about` page.
+
++ `about` page updated.
+
+### v1.2
+
++ `sitemap.xml` generation procedure integrated into Github Actions.
+
+### v2.0
+
++ Major Change in site ui.
+
++ NightMode is now supported on all pages.
+
++ Auto detect device theme to switch page theme.
+
+### v2.1
+
++ Domain update to [wear-a-mask.mijazz.icu](https://wear-a-mask.mijazz.icu)
+
++ Submodule dependency removed, clone 1 depth of original submodule project in each Github Action build.
 
 ## Goals
 
