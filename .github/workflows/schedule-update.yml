@@ -29,8 +29,8 @@ jobs:
           run: |
             python DataPreprocessing.py
 
-        - name: Add CNAME
-          run: echo "wear-a-mask.mijazz.icu" > pages/CNAME
+        # - name: Add CNAME
+        #   run: echo "wear-a-mask.mijazz.icu" > pages/CNAME
 
         - name: Generate Sitemap for search engine
           id: sitemap

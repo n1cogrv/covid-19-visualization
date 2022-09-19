@@ -1,6 +1,6 @@
-# Covid 19 Visualization in US
+# Covid-19 Visualization in US
 
-> Project Link => [wear-a-mask.mijazz.icu](https://wear-a-mask.mijazz.icu)
+US Covid-19 Data Panel/Overview
 
 ## How this works
 
@@ -42,9 +42,10 @@
 
 ### v2.1
 
-+ Domain update to [wear-a-mask.mijazz.icu](https://wear-a-mask.mijazz.icu)
++ ~~Domain update to [wear-a-mask.mijazz.icu](https://wear-a-mask.mijazz.icu)~~
 
 + Submodule dependency removed, clone 1 depth of original submodule project in each Github Action build.
+
 
 ## Goals
 

@@ -34,8 +34,8 @@ jobs:
           id: currenttime
           run: echo "::set-output name=now::$(date +'%Y/%m/%d-%H:%M:%S-UTC' --utc)"
 
-        - name: Add CNAME
-          run: echo "wear-a-mask.mijazz.icu" > pages/CNAME
+        # - name: Add CNAME
+        #   run: echo "wear-a-mask.mijazz.icu" > pages/CNAME
 
 
         - name: Generate Sitemap for search engine
