@@ -42,20 +42,9 @@ US Covid-19 Data Panel/Overview
 
 ### v2.1
 
-+ ~~Domain update to [wear-a-mask.mijazz.icu](https://wear-a-mask.mijazz.icu)~~
++ Domain update to [wear-a-mask.jasonchen.icu](https://wear-a-mask.jasonchen.icu)
 
 + Submodule dependency removed, clone 1 depth of original submodule project in each Github Action build.
 
 
-## Goals
-
-- [x] Configure `Github Actions` and build to `gh-pages` branch.
-
-- [x] CNAME for this project.
-
-- [ ] Re-write the project data processing part by using `sqlite3`, prepare for changing fetched data format and handling complex queries.
-
-- [ ] Rewrtie the frontend part using `React` or any other `nodejs` frontend framework.
-
-## WEAR A MASK, PLZ.
 
