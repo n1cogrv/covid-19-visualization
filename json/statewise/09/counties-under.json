@@ -1,0 +1,32 @@
+{
+    "countyX": [
+        "Fairfield",
+        "Hartford",
+        "Litchfield",
+        "Middlesex",
+        "New Haven",
+        "New London",
+        "Tolland",
+        "Windham"
+    ],
+    "casesY": [
+        264808,
+        237616,
+        41894,
+        38930,
+        258381,
+        74124,
+        27981,
+        31452
+    ],
+    "deathsY": [
+        3029,
+        3505,
+        536,
+        551,
+        3181,
+        788,
+        319,
+        357
+    ]
+}

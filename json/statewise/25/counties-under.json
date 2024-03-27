@@ -1,0 +1,50 @@
+{
+    "countyX": [
+        "Worcester",
+        "Suffolk",
+        "Plymouth",
+        "Norfolk",
+        "Nantucket",
+        "Middlesex",
+        "Hampshire",
+        "Hampden",
+        "Franklin",
+        "Essex",
+        "Dukes",
+        "Bristol",
+        "Berkshire",
+        "Barnstable"
+    ],
+    "casesY": [
+        241314,
+        268646,
+        143891,
+        174077,
+        3957,
+        438519,
+        39845,
+        172434,
+        14772,
+        257547,
+        4384,
+        182647,
+        35610,
+        49849
+    ],
+    "deathsY": [
+        3087,
+        2248,
+        1967,
+        2340,
+        0,
+        4842,
+        455,
+        2145,
+        198,
+        3287,
+        0,
+        2567,
+        484,
+        791
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "topcases": {
+        "x": [
+            "California",
+            "Texas",
+            "Florida",
+            "New York",
+            "Illinois",
+            "Pennsylvania",
+            "North Carolina",
+            "Ohio",
+            "Michigan",
+            "New Jersey"
+        ],
+        "y": [
+            12169158,
+            8447168,
+            7542869,
+            6805271,
+            4107931,
+            3539135,
+            3481732,
+            3415254,
+            3068195,
+            3057442
+        ]
+    },
+    "topdeaths": {
+        "x": [
+            "California",
+            "Texas",
+            "Florida",
+            "New York",
+            "Pennsylvania",
+            "Michigan",
+            "Ohio",
+            "Illinois",
+            "Georgia",
+            "New Jersey"
+        ],
+        "y": [
+            104277,
+            94518,
+            87141,
+            80109,
+            50701,
+            42311,
+            42061,
+            41618,
+            41055,
+            36097
+        ]
+    }
+}
