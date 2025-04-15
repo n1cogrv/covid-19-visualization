@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="Visualization of Covid-19 in United States, tables and maps are included." name="description">
+    <meta content="MijazzChan" name="author">
+
+    <title>Covid-19 US Visualization - State-wise Listing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" rel="stylesheet">
+    <link href="css/dark-mode.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="modal fade" id="state-select-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="bg-light modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Visualizer</h5>
+            </div>
+            <div class="modal-body">
+                <h4 style="padding-bottom: 1rem">Before diving into state-wise data, please select a state first.</h4>
+                <div class="list-unstyled row bg-light" id="states-list">
+<!--                    <a class="list-group-item list-group-item-action state-selection" href="?state=here">Row1</a>-->
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Covid-19 US Visualization</div>
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action bg-light" href="index.html">Overview</a>
+            <a class="list-group-item list-group-item-action bg-light" href="listing.html">Listing</a>
+            <a class="list-group-item list-group-item-action bg-light" href="state-wise.html">Region Data</a>
+            <a class="list-group-item list-group-item-action bg-light" href="state-overview-map.html">State Overview Map</a>
+            <a class="list-group-item list-group-item-action bg-light" href="about.html">About</a>
+            <!--        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>-->
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-light bg-light border-bottom">
+            <button class="navbar-toggler-icon" id="menu-toggle"></button>
+            <span class="nav-item custom-control custom-switch dark-mode-nav">
+                    <input class="custom-control-input" id="darkSwitch" type="checkbox"/>
+                    <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+            </span>
+        </nav>
+
+        <div class="container-fluid">
+            <!-- Content -->
+            <p id="current-header" class="h2 text-center" style="padding-top: 1rem">Covid-19 in Loading...</p>
+            <p class="h6 text-muted text-right" id="date-current">Updated on </p>
+            <div class="row">
+                <div class="col-12 grid-margin">
+                    <div class="card bg-light">
+                        <div class="card-header text-center">
+                            <h4>Real-Time Data</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="d-flex">
+                                        <div class="wrapper">
+                                            <h3 class="mb-0 font-weight-semibold" id="cases-current">Loading</h3>
+                                            <h5 class="mb-0 font-weight-medium text-warning">Cases</h5>
+                                            <p class="mb-0 text-muted">Today</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+                                    <div class="d-flex">
+                                        <div class="wrapper">
+                                            <h3 class="mb-0 font-weight-semibold" id="deaths-current">Loading</h3>
+                                            <h5 class="mb-0 font-weight-medium text-danger">Deaths</h5>
+                                            <p class="mb-0 text-muted">Today</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+                                    <div class="d-flex">
+                                        <div class="wrapper">
+                                            <h3 class="mb-0 font-weight-semibold" id="cases-compare">
+                                                Loading
+
+                                            </h3>
+
+                                            <h5 class="mb-0 font-weight-medium text-primary">Cases</h5>
+                                            <p class="mb-0 text-muted">To Yesterday</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
+                                    <div class="d-flex">
+                                        <div class="wrapper">
+                                            <h3 class="mb-0 font-weight-semibold" id="deaths-compare">Loading</h3>
+                                            <h5 class="mb-0 font-weight-medium text-primary">Deaths</h5>
+                                            <p class="mb-0 text-muted">To Yesterday</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacer" style="padding: 1rem"></div>
+
+            <!--          <p class="h2 text-center" style="padding: 1rem">Timeline Chart</p>-->
+            <div class="row">
+                <div class="col-12 grid-margin">
+                    <div class="card bg-light">
+
+                        <div class="card-header text-center">
+                            <h4>Timeline Chart</h4>
+                        </div>
+
+                        <div class="card-body">
+                            <figure class="highcharts-figure">
+                                <div class="HIGHCHARTS-CONTAINER" id="container1" style="height: 600px">
+
+                                </div>
+                            </figure>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                            <span style="padding: 0.5rem">Choose View -></span>
+                            <button class="btn bg-transparent" id="time-scale-7">Week</button>
+                            <button class="btn bg-transparent" id="time-scale-30">Month</button>
+                            <button class="btn bg-transparent" id="time-scale-365">Year</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Content-->
+            </div>
+            <div class="spacer" style="padding: 1rem"></div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Counties</h4>
+                            <table id="state-wise-tb" class="table bg-light table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">County</th>
+                                    <th class="text-warning" scope="col">Cases Reported</th>
+                                    <th class="text-danger" scope="col">Deaths Reported</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script crossorigin="anonymous"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script crossorigin="anonymous"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dark mode switch override -->
+    <script src="js/override-default-darkmode-detection.js"></script>
+
+    <!-- HighChart dependencies -->
+    <script crossorigin="anonymous"
+            integrity="sha256-fDbe4TepPjh6W630mXP0hzXCDbeBKCaL7xMiH1vi6r4="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/highcharts.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-MhuSaR+PCWyAoQoao/I4VC28Jn44ClJgTkMX2JFf6Tk="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/map.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-u8OFdTPqM2KiJslTVJjXXIFf2v9ZWoWhMpNdusY4XgM="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/exporting.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-JWDOjoCSCb+brqc8AmgrD84td506g7CPIJT8tai7HCA="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/export-data.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha256-DtslBZEW0z3+1tIdiNdtoW2oKJigMleQb8rfvT6eca8="
+            src="https://cdn.jsdelivr.net/npm/highcharts@8.2.2/modules/accessibility.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/state-wise.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        document.getElementById("darkSwitch").addEventListener("change", function () {
+            parseStateOverviewChart("container1", 30);
+        });
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        $("#time-scale-7").click(function (e) {
+            e.preventDefault();
+            parseStateOverviewChart("container1", 7);
+        });
+        $("#time-scale-30").click(function (e) {
+            e.preventDefault();
+            parseStateOverviewChart("container1", 30);
+        });
+        $("#time-scale-365").click(function (e) {
+            e.preventDefault();
+            parseStateOverviewChart("container1", 365);
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(
+                () => {
+                    checkParamAndPrompt();
+                },
+                600
+            )
+            // getOverviewData();
+            // parseOverviewLineChart("container1", 7);
+            // parseOverviewLineChart("container1", 7);
+        });
+    </script>
+
+</div>
+</body>
+
+</html>

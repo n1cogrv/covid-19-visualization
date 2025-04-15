@@ -1,0 +1,65 @@
+[data-theme="dark"] {
+    background-color: #2b2727 !important;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: #353131 !important;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: #2b2727 !important;
+}
+
+[data-theme="dark"] .bg-black {
+    background-color: #ffffff !important;
+}
+
+[data-theme="dark"] button.bg-transparent {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="dark"] .nav-link:focus {
+    color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/*[data-theme="dark"] .dropdown-menu, .dropdown-item {*/
+/*    color: #ffffff;*/
+/*    text-decoration: none;*/
+/*    background-color: #2b2727 !important;*/
+/*}*/
+[data-theme="dark"] .list-group {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] a.state-selection {
+    background-color: #2b2727;
+    color: #f8f8f8;
+}
+
+[data-theme="dark"] a.list-group-item:hover, a.list-group-item:focus {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
+
+[data-theme="dark"] .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background-color: #000000 !important;
+    color: #ffffff;
+
+}
+
+[data-theme="dark"] .highcharts-data-table tr:hover {
+    background-color: #000000 !important;
+    color: #ffffff;
+
+}
+

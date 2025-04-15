@@ -1,0 +1,23 @@
+{
+    "countyX": [
+        "Hawaii",
+        "Honolulu",
+        "Kalawao",
+        "Kauai",
+        "Maui"
+    ],
+    "casesY": [
+        42786,
+        264809,
+        1,
+        19215,
+        45597
+    ],
+    "deathsY": [
+        227,
+        1327,
+        0,
+        47,
+        173
+    ]
+}

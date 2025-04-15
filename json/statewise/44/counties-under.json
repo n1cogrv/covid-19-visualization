@@ -1,0 +1,23 @@
+{
+    "countyX": [
+        "Bristol",
+        "Kent",
+        "Newport",
+        "Providence",
+        "Washington"
+    ],
+    "casesY": [
+        17864,
+        64631,
+        26630,
+        279407,
+        43177
+    ],
+    "deathsY": [
+        193,
+        574,
+        141,
+        2732,
+        275
+    ]
+}
